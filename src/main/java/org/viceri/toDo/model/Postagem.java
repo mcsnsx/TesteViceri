@@ -13,29 +13,31 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Entity
 @Table(name = "tb_postagem")
 public class Postagem {
-	
+
 	// ---> Chave Primária / Identificação unica da tarefa
-	 @Id
-	 @GeneratedValue(strategy = GenerationType.IDENTITY)
-	 private long id;
-	 
-	 // ---> Cadastrar o nome da tarefa
-	 @NotNull(message = "Esse campo é obrigatório!")
-	 private String nome;
-	 
-	 // ---> Cadastrar a descrição da tarefa
-	 @NotNull(message = "Esse campo é obrigatório!")
-	 private String descricao;	 
-	 
-	 // ---> Chave estrangeira / Relacionamento de muitos para um, postagem -> usuario
-	 @ManyToOne
-	 @JsonIgnoreProperties("produto")
-	 private Usuario usuario;
-	 
-	// ---> Chave estrangeira / Relacionamento de muitos para um, postagem -> categoria
-	 //@ManyToOne
-	 //@JsonIgnoreProperties("produto")
-	// private Categoria categoria;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private long id;
+
+	// ---> Cadastrar o nome da tarefa
+	@NotNull(message = "Esse campo é obrigatório!")
+	private String nome;
+
+	// ---> Cadastrar a descrição da tarefa
+	@NotNull(message = "Esse campo é obrigatório!")
+	private String descricao;
+
+	// ---> Chave estrangeira / Relacionamento de muitos para um, postagem ->
+	// usuario
+	@ManyToOne
+	@JsonIgnoreProperties("produto")
+	private Usuario usuario;
+
+	// ---> Chave estrangeira / Relacionamento de muitos para um, postagem ->
+	// categoria
+	@ManyToOne
+	@JsonIgnoreProperties("produto")
+	private Categoria categoria;
 
 	public long getId() {
 		return id;
@@ -68,8 +70,5 @@ public class Postagem {
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
-	
-	
-	 	 
 
 }
