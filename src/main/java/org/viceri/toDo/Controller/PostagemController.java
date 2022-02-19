@@ -47,7 +47,7 @@ public class PostagemController {
 	}
 	
 	// ---> Buscar por prioridade (Baixa prioridade, Média prioridade, Alta prioridade)
-	@GetMapping("/status/{status}")
+	@GetMapping("/prioridade/{prioridade}")
 	public ResponseEntity <List<Postagem>> getByPrioridade(@PathVariable String prioridade){
 		return ResponseEntity.ok(postagemRepository.findAllByPrioridadeContainingIgnoreCase(prioridade));
 	}
