@@ -1,4 +1,4 @@
-package org.viceri.toDo.model;
+package org.viceri.toDo.Model;
 
 import java.util.List;
 
@@ -25,11 +25,11 @@ public class Categoria {
 	// ---> Cadastrar prioridade da tarefa (Baixa prioridade, Média prioridade, Alta
 	// prioridade)
 	@NotNull(message = "Esse campo é obrigatório!")
-	private String prioridade;
+	private String prioridade; //tipo
 
 	// ---> Cadastrar status da tarefa (pendente, cancelada, conluída)
 	@NotNull(message = "Esse campo é obrigatório!")
-	private String status;
+	private String status; //palavrachave
 
 	// ---> Chave estrangeira / Relacionamento de um para muitos, usuario ->
 	// postagem

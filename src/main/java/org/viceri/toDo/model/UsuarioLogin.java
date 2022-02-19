@@ -1,4 +1,4 @@
-package org.viceri.toDo.model;
+package org.viceri.toDo.Model;
 
 public class UsuarioLogin {
 	

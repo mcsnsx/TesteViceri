@@ -1,4 +1,4 @@
-package org.viceri.toDo.model;
+package org.viceri.toDo.Model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
