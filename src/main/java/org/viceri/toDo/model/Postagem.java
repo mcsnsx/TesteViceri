@@ -14,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Table(name = "tb_postagem")
 public class Postagem {
 	
-	// ---> Identificação unica da tarefa
+	// ---> Chave Primária / Identificação unica da tarefa
 	 @Id
 	 @GeneratedValue(strategy = GenerationType.IDENTITY)
 	 private long id;
@@ -25,15 +25,7 @@ public class Postagem {
 	 
 	 // ---> Cadastrar a descrição da tarefa
 	 @NotNull(message = "Esse campo é obrigatório!")
-	 private String descricao;
-	 
-	 // ---> Cadastrar prioridade da tarefa (Baixa prioridade, Média prioridade, Alta prioridade)
-	 @NotNull(message = "Esse campo é obrigatório!")
-	 private String prioridade;
-	 
-	 // ---> Cadastrar status da tarefa (pendente, cancelada, conluída)
-	 @NotNull(message = "Esse campo é obrigatório!")
-	 private String status;
+	 private String descricao;	 
 	 
 	 // ---> Chave estrangeira / Relacionamento de muitos para um, postagem -> usuario
 	 @ManyToOne
@@ -41,9 +33,9 @@ public class Postagem {
 	 private Usuario usuario;
 	 
 	// ---> Chave estrangeira / Relacionamento de muitos para um, postagem -> categoria
-	 @ManyToOne
-	 @JsonIgnoreProperties("produto")
-	 private Categoria categoria;
+	 //@ManyToOne
+	 //@JsonIgnoreProperties("produto")
+	// private Categoria categoria;
 
 	public long getId() {
 		return id;
@@ -69,21 +61,15 @@ public class Postagem {
 		this.descricao = descricao;
 	}
 
-	public String getPrioridade() {
-		return prioridade;
+	public Usuario getUsuario() {
+		return usuario;
 	}
 
-	public void setPrioridade(String prioridade) {
-		this.prioridade = prioridade;
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
-
-	public String getStatus() {
-		return status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
+	
+	
 	 	 
 
 }

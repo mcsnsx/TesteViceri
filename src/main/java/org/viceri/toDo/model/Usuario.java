@@ -20,7 +20,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Table (name = "tb_usuario")
 public class Usuario {
 	
-	// ---> Identificação unica do usuário
+	// ---> Chave Primária / Identificação unica do usuário
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
