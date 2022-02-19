@@ -4,13 +4,17 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "tb_postagem")
 public class Postagem {
 	
+	// ---> Identificação unica da tarefa
 	 @Id
 	 @GeneratedValue(strategy = GenerationType.IDENTITY)
 	 private long id;
@@ -30,6 +34,16 @@ public class Postagem {
 	 // ---> Cadastrar status da tarefa (pendente, cancelada, conluída)
 	 @NotNull(message = "Esse campo é obrigatório!")
 	 private String status;
+	 
+	 // ---> Chave estrangeira / Relacionamento de muitos para um, postagem -> usuario
+	 @ManyToOne
+	 @JsonIgnoreProperties("produto")
+	 private Usuario usuario;
+	 
+	// ---> Chave estrangeira / Relacionamento de muitos para um, postagem -> categoria
+	 @ManyToOne
+	 @JsonIgnoreProperties("produto")
+	 private Categoria categoria;
 
 	public long getId() {
 		return id;
