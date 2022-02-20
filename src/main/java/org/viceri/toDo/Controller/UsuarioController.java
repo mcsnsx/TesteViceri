@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.viceri.toDo.Model.Usuario;
 import org.viceri.toDo.Model.UsuarioLogin;
 import org.viceri.toDo.Repository.UsuarioRepository;
+import org.viceri.toDo.Service.UsuarioService;
 
 @RestController
 @RequestMapping("/usuarios")
