@@ -32,6 +32,11 @@ public class Postagem {
 	@ManyToOne
 	@JsonIgnoreProperties("produto")
 	private Usuario usuario;
+	
+	// ---> Cadastrar prioridade da tarefa (Baixa prioridade, Média prioridade, Alta
+	// prioridade)
+	@NotNull(message = "Esse campo é obrigatório!")
+	private String prioridade; //tipo
 
 	// ---> Chave estrangeira / Relacionamento de muitos para um, postagem ->
 	// categoria
