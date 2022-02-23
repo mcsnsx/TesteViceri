@@ -18,7 +18,7 @@ import org.viceri.toDo.Model.Postagem;
 import org.viceri.toDo.Repository.PostagemRepository;
 
 @RestController
-@RequestMapping("/produtos")
+@RequestMapping("/postagens")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class PostagemController {
 	

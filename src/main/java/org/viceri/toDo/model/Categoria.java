@@ -39,7 +39,7 @@ public class Categoria {
 
 	// ---> Chave estrangeira / Relacionamento de um para muitos, usuario ->
 	// postagem
-	@OneToMany(mappedBy = "categoria", cascade = CascadeType.REMOVE)
+	@OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties({ "categoria", "postagem" })
 	private List<Postagem> postagem;
 

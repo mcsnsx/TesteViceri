@@ -30,7 +30,7 @@ public class Postagem {
 	// ---> Chave estrangeira / Relacionamento de muitos para um, postagem ->
 	// usuario
 	@ManyToOne
-	@JsonIgnoreProperties("produto")
+	@JsonIgnoreProperties("postagem")
 	private Usuario usuario;
 	
 	// ---> Cadastrar prioridade da tarefa (Baixa prioridade, Média prioridade, Alta
@@ -41,7 +41,7 @@ public class Postagem {
 	// ---> Chave estrangeira / Relacionamento de muitos para um, postagem ->
 	// categoria
 	@ManyToOne
-	@JsonIgnoreProperties("produto")
+	@JsonIgnoreProperties("p")
 	private Categoria categoria;
 
 	public long getId() {
@@ -75,5 +75,22 @@ public class Postagem {
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
+
+	public String getPrioridade() {
+		return prioridade;
+	}
+
+	public void setPrioridade(String prioridade) {
+		this.prioridade = prioridade;
+	}
+
+	public Categoria getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
+	}
+	
 
 }
