@@ -25,6 +25,7 @@ Segue abaixo o resumo dos requisitos que devem ser desenvolvidos:
 * Autenticação do usuário por meio de e-mail e senha
 * Disponibilização da documentação da API Swagger. 
 
+<hr> 
 
 * Status: Concluído.
 
